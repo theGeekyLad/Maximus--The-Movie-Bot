@@ -1,0 +1,842 @@
+{
+  "name": "Maximus - The Movie Bot",
+  "intents": [
+    {
+      "intent": "director",
+      "examples": [
+        {
+          "text": "Did * direct it?"
+        },
+        {
+          "text": "Who’s the movie director?"
+        },
+        {
+          "text": "Who’s the man behind the camera?"
+        },
+        {
+          "text": "Who’s the man behind the movie?"
+        },
+        {
+          "text": "Who’s directed the movie?"
+        }
+      ],
+      "description": "Gives information about the movie's director."
+    },
+    {
+      "intent": "rating",
+      "examples": [
+        {
+          "text": "IMDb"
+        },
+        {
+          "text": "What’s the general opinion?"
+        },
+        {
+          "text": "What’s the IMDb rating?"
+        },
+        {
+          "text": "What do others say?"
+        },
+        {
+          "text": "What’s people’s opinion?"
+        },
+        {
+          "text": "What’s the rating?"
+        }
+      ],
+      "description": "Fetches the IMDb rating for the movie in question."
+    },
+    {
+      "intent": "location",
+      "examples": [
+        {
+          "text": "Where was the plot set?"
+        },
+        {
+          "text": "Which country is it in?"
+        },
+        {
+          "text": "Where was it set?"
+        }
+      ],
+      "description": "Gives data about where the movie was set."
+    },
+    {
+      "intent": "genre",
+      "examples": [
+        {
+          "text": "What kind of a movie is it?"
+        },
+        {
+          "text": "Which genre is it?"
+        },
+        {
+          "text": "Would I get scared watching the movie?"
+        },
+        {
+          "text": "Would kids love the movie?"
+        },
+        {
+          "text": "Is it a funny film?"
+        }
+      ],
+      "description": "Movie genre query."
+    },
+    {
+      "intent": "thanks",
+      "examples": [
+        {
+          "text": "Thanks"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Bye"
+        },
+        {
+          "text": "Thank you"
+        }
+      ],
+      "description": "Thank you"
+    },
+    {
+      "intent": "writer",
+      "examples": [
+        {
+          "text": "Who’s written the movie?"
+        },
+        {
+          "text": "Who’s the writer?"
+        },
+        {
+          "text": "Did * write it?"
+        }
+      ],
+      "description": "To know who the movie's story-line writer is."
+    },
+    {
+      "intent": "cast",
+      "examples": [
+        {
+          "text": "What’s the cast?"
+        },
+        {
+          "text": "Is * in this movie?"
+        },
+        {
+          "text": "Who’re the actors?"
+        },
+        {
+          "text": "Has * acted in this movie?"
+        },
+        {
+          "text": "Is * there?"
+        }
+      ],
+      "description": "Reveals the entire crew who've enacted the movie."
+    },
+    {
+      "intent": "launch",
+      "examples": [
+        {
+          "text": "What's the year of launch?"
+        },
+        {
+          "text": "When was it released?"
+        }
+      ],
+      "description": "Movie launch year query."
+    },
+    {
+      "intent": "awards",
+      "examples": [
+        {
+          "text": "Has the movie won any awards?"
+        },
+        {
+          "text": "Did it win any awards?"
+        },
+        {
+          "text": "What awards has the movie won?"
+        }
+      ],
+      "description": "If the movie has won any awards, what are they."
+    },
+    {
+      "intent": "runtime",
+      "examples": [
+        {
+          "text": "How long is the movie?"
+        },
+        {
+          "text": "What’s the running time?"
+        },
+        {
+          "text": "What’s the length?"
+        }
+      ],
+      "description": "Movie running time query."
+    },
+    {
+      "intent": "language",
+      "examples": [
+        {
+          "text": "What all languages is it in?"
+        },
+        {
+          "text": "Which language is it in?"
+        }
+      ],
+      "description": "Uncovers the list of languages in the movie."
+    },
+    {
+      "intent": "production",
+      "examples": [
+        {
+          "text": "Who is the producer?"
+        },
+        {
+          "text": "Who are the producers?"
+        },
+        {
+          "text": "What’s the production?"
+        }
+      ],
+      "description": "Gives information about the movie's producers."
+    },
+    {
+      "intent": "plot",
+      "examples": [
+        {
+          "text": "What’s the plot?"
+        },
+        {
+          "text": "What’s the story-line?"
+        },
+        {
+          "text": "What’s the story?"
+        },
+        {
+          "text": "What’s the background?"
+        },
+        {
+          "text": "What’s it like?"
+        }
+      ],
+      "description": "Explains the plot of the movie's story-line."
+    },
+    {
+      "intent": "box_office",
+      "examples": [
+        {
+          "text": "What’s the income?"
+        },
+        {
+          "text": "What’s the profit like?"
+        },
+        {
+          "text": "What are the earnings?"
+        },
+        {
+          "text": "What’s the box office income?"
+        }
+      ],
+      "description": "Shows information about the box office earnings or overall profit."
+    }
+  ],
+  "entities": [],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-07-10"
+    }
+  },
+  "description": "Maximus is the know-it-all for movies! Ask him and you'll be surprised by his smartness.",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1537372061067",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1537372061067",
+      "previous_sibling": "handler_3_1537372061067"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_2_1537372061067",
+      "event_name": "input",
+      "dialog_node": "handler_3_1537372061067"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1537371979788",
+      "dialog_node": "slot_2_1537372061067"
+    },
+    {
+      "type": "standard",
+      "title": "Movie Indexed Search",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Alright, so you're looking at $title today. What about it?"
+              },
+              {
+                "text": "So $title it is. Hit me up!"
+              },
+              {
+                "text": "Nice show, what's up about $title?"
+              },
+              {
+                "text": "Yeah seen $title! Go on."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "title": "<? input.text ?>"
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1537371979788",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Running Time",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The movie runs for about var"
+              },
+              {
+                "text": "It's var long"
+              },
+              {
+                "text": "Shouldn't be too long but it's var"
+              },
+              {
+                "text": "It's as sweet as var!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 2
+      },
+      "metadata": {},
+      "conditions": "#runtime",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1537508961807",
+      "previous_sibling": "node_1_1537508841533"
+    },
+    {
+      "type": "standard",
+      "title": "Story Writer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It's the famous var"
+              },
+              {
+                "text": "var it is! Awesomeness"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 5
+      },
+      "metadata": {},
+      "conditions": "#writer",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1537509270910",
+      "previous_sibling": "node_4_1537509135183"
+    },
+    {
+      "type": "standard",
+      "title": "IMDb Rating",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "IMDb's gives it a var"
+              },
+              {
+                "text": "A solid var indeed"
+              },
+              {
+                "text": "Might rate it var"
+              },
+              {
+                "text": "var should do fine!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 10
+      },
+      "metadata": {},
+      "conditions": "#rating",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_10_1537509704877",
+      "previous_sibling": "node_9_1537509606803"
+    },
+    {
+      "type": "standard",
+      "title": "Farewell",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Alright, see you around!"
+              },
+              {
+                "text": "Ba-bye. :)"
+              },
+              {
+                "text": "Catch ya' later then!"
+              },
+              {
+                "text": "Cheers!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#thanks",
+      "dialog_node": "node_1_1541009130006",
+      "previous_sibling": "node_13_1537509940552"
+    },
+    {
+      "type": "standard",
+      "title": "Awards Won",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The movie has earned a name with var"
+              },
+              {
+                "text": "A nice set of awards indeed! var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 13
+      },
+      "metadata": {},
+      "conditions": "#awards",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_13_1537509940552",
+      "previous_sibling": "node_12_1537509877060"
+    },
+    {
+      "type": "standard",
+      "title": "Language",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "They're kinda multi-lingual (not really)! It's in var"
+              },
+              {
+                "text": "var sounds good"
+              },
+              {
+                "text": "You'd definitely speak one among var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 8
+      },
+      "metadata": {},
+      "conditions": "#language",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1537509516009",
+      "previous_sibling": "node_7_1537509435525"
+    },
+    {
+      "type": "standard",
+      "title": "Story-line",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "var. Amazing story ah?"
+              },
+              {
+                "text": "It's pretty cool a story like ... var"
+              },
+              {
+                "text": "Well not really amused but it's here ... var"
+              },
+              {
+                "text": "var. I kinda liked it!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 7
+      },
+      "metadata": {},
+      "conditions": "#plot",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1537509435525",
+      "previous_sibling": "node_6_1537509367252"
+    },
+    {
+      "type": "standard",
+      "title": "Country",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "var is a beautiful place indeed"
+              },
+              {
+                "text": "Its set in var. Love that place!"
+              },
+              {
+                "text": "I've been to var, where the movie was shot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 9
+      },
+      "metadata": {},
+      "conditions": "#location",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1537509606803",
+      "previous_sibling": "node_8_1537509516009"
+    },
+    {
+      "type": "standard",
+      "title": "Production Company",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Heard of var? They're the amazing guys"
+              },
+              {
+                "text": "var team"
+              },
+              {
+                "text": "The famous var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 12
+      },
+      "metadata": {},
+      "conditions": "#production",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_12_1537509877060",
+      "previous_sibling": "node_11_1537509769689"
+    },
+    {
+      "type": "standard",
+      "title": "Box Office Income",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That's a whopping var!"
+              },
+              {
+                "text": "var is huge!"
+              },
+              {
+                "text": "Try counting var on your fingers!"
+              },
+              {
+                "text": "Meagre var. My pocket money is higher!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 11
+      },
+      "metadata": {},
+      "conditions": "#box_office",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_11_1537509769689",
+      "previous_sibling": "node_10_1537509704877"
+    },
+    {
+      "type": "standard",
+      "title": "Cast / Crew",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A handsome set of people including var"
+              },
+              {
+                "text": "var! I love these guys"
+              },
+              {
+                "text": "All of var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 6
+      },
+      "metadata": {},
+      "conditions": "#cast",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_6_1537509367252",
+      "previous_sibling": "node_5_1537509270910"
+    },
+    {
+      "type": "standard",
+      "title": "Director Info",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Looks like var is the one!"
+              },
+              {
+                "text": "Heard of var? Yeah"
+              },
+              {
+                "text": "It's var, We've met up before"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "query": 4
+      },
+      "metadata": {},
+      "conditions": "#director",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1537509135183",
+      "previous_sibling": "node_3_1537509056114"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1541009130006"
+    },
+    {
+      "type": "standard",
+      "title": "Launch Year",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The movie saw it's release in var"
+              },
+              {
+                "text": "Hmm, I guess it's in var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 1
+      },
+      "metadata": {},
+      "conditions": "#launch && $title != null",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1537508841533",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Genre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It's a nice var plot!"
+              },
+              {
+                "text": "You'll love the var"
+              },
+              {
+                "text": "It's one of my favorites being var!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "query": 3
+      },
+      "metadata": {},
+      "conditions": "#genre",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1537509056114",
+      "previous_sibling": "node_2_1537508961807"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey! It's Maximus here. Which movie you'd like to know about?"
+              },
+              {
+                "text": "Hello! My name's Maximus. Which movie are you looking at?"
+              },
+              {
+                "text": "Hey there. It's Maximus! What's the movie you're looking at today?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "Plot": "A hot-shot race-car named Lightning McQueen gets waylaid in Radiator Springs, where he finds the true meaning of friendship and family.",
+        "Year": "2006",
+        "Genre": "Animation, Comedy, Family",
+        "Rated": "G",
+        "Actors": "Owen Wilson, Paul Newman, Bonnie Hunt, Larry the Cable Guy",
+        "Awards": "Nominated for 2 Oscars. Another 27 wins & 28 nominations.",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTg5NzY0MzA2MV5BMl5BanBnXkFtZTYwNDc3NTc2._V1_SX300.jpg",
+        "Writer": "John Lasseter (original story by), Joe Ranft (original story by), Jorgen Klubien (original story by), Dan Fogelman (screenplay by), John Lasseter (screenplay by), Joe Ranft (screenplay by), Kiel Murray (screenplay by), Phil Lorin (screenplay by), Jorgen Klubien (screenplay by), Steve Purcell (additional screenplay material)",
+        "Country": "USA",
+        "Runtime": "117 min",
+        "Director": "John Lasseter, Joe Ranft(co-director)",
+        "Language": "English, Italian, Japanese, Yiddish",
+        "Released": "09 Jun 2006",
+        "BoxOffice": "$244,052,771",
+        "Production": "Buena Vista",
+        "imdbRating": "7.1"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1537371979788"
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "b6bbabe2-c8fb-4973-98f1-5e290f53b44b",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
